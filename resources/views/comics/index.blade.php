@@ -10,15 +10,15 @@
             <h1 class="h1">Admin - All Comics</h1>
         </div>
         <div class="row">
-            <div class="col">
-                <a href="{{ route('comics.create') }}" class="btn btn-primary">Add new comic</a>
+            <div class="col mb-3">
+                <a href="{{ route('comics.create') }}" class="btn btn-secondary">Add new comic</a>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                 <table class="table table-primary">
+                 <table class="table table-striped table-hover">
                     <thead>
-                        <tr class="table-primary">
+                        <tr class="table-dark">
                             <th>Title</th>
                             <th>Author</th>
                             <th>Price</th>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col d-flex justify-content-center">
                 {{ $comics->links() }}
             </div>
         </div>
