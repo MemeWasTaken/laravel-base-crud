@@ -7,13 +7,16 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1 class="h1">Admin - All Comics</h1>
+            <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                <h1 class="h1">Admin - All Comics</h1>
+                <a href="{{ route('comics.create') }}" class="btn btn-secondary create">Add new Comic</a>
+            </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col mb-3">
                 <a href="{{ route('comics.create') }}" class="btn btn-secondary">Add new comic</a>
             </div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col">
                  <table class="table table-striped table-hover">
@@ -22,7 +25,7 @@
                             <th>Title</th>
                             <th>Author</th>
                             <th>Price</th>
-                            <th>Actions</th>
+                            <th class="d-flex justify-content-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,7 +34,10 @@
                             <td>{{ $comic->title }}</td>
                             <td>{{ $comic->author }}</td>
                             <td>{{ $comic->price }} €</td>
-                            <td><a class="btn btn-primary" href="{{ route('comics.show', $comic) }}">View</a></td>
+                            <td class="d-flex justify-content-end">
+                                <a class="btn btn-secondary me-1" href="{{ route('comics.show', $comic) }}">View</a>
+                                <a class="btn btn-secondary ms-1" href="{{ route('comics.edit', $comic) }}">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
